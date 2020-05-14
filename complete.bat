@@ -14,4 +14,11 @@ echo %content-path%
 echo %root-path%
 echo %category%
 
+setlocal enabledelayedexpansion enableextensions
+set FILELIST=
+for %%x in (%content-path%\*) do set FILELIST=!FILELIST! %%x
+set FILELIST=%FILELIST:~1%
+
+echo %FILELIST%
+
 pause
